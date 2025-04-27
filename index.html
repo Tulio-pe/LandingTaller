@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!--import taildwind cdn  -->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="icon" href="./img/logo.ico">
+</head>
+<!--
+variables para buscar y remplazar:
+
+                "box-bg": "rgb(var(--color-box))",
+				"box-shadow": "rgb(var(--box-sd))",
+				"box-border": "rgb(var(--box-border))",
+				primary: "#1d4ed8",
+				"heading-1": "rgb(var(--heading-1))",
+				"heading-2": "rgb(var(--heading-2))",
+				"heading-3": "rgb(var(--heading-3))",
+-->
+<body>
+    <main class="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
+        <header class="absolute inset-x-0 top-0 z-50 py-6">
+            <div class="mx-auto max-w-7xl w-full px-5 sm:px-8 md:px-14 lg:px-5  flex flex-col lg:flex-row gap-10 lg:gap-12">
+                <nav class="w-full flex justify-between gap-6 relative">
+                    <!-- logo -->
+                    <div class="min-w-max inline-flex relative">
+                        <a href="/" class="relative flex items-center gap-3">
+                            <div class="relative w-20">
+                                <img src="./img/logo.png" alt="logo">
+                            </div>
+                            <div class="inline-flex text-lg font-semibold text-[var(--heading-1)]">
+                                Tallerazo
+                            </div>
+                        </a>
+                    </div>
+
+                    <div data-nav-overlay aria-hidden="true" class="fixed hidden inset-0 lg:!hidden bg-[var(--box-bg)] bg-opacity-50 backdrop-filter backdrop-blur-xl"></div>
+                    <div data-navbar class="flex h-0 overflow-hidden lg:!h-auto lg:scale-y-100 duration-300 ease-linear flex-col gap-y-6 gap-x-4 lg:flex-row w-full lg:justify-between lg:items-center absolute lg:relative top-full lg:top-0 bg-body lg:bg-transparent border-x border-x-[var(--box-border)] lg:border-x-0">
+                        <ul class="border-t border-[var(--box-border)] lg:border-t-0 px-6 lg:px-0 pt-6 lg:pt-0 flex flex-col lg:flex-row gap-y-4 gap-x-3 text-lg text-[var(--heading-2)] w-full lg:justify-center lg:items-center">
+                            <li>
+                                 <a href="#services" class="duration-300 font-medium ease-linear hover:text-[var(--primary)] py-3">Servicios</a>
+                            </li>
+                            <li>
+                                 <a href="#about-us" class="duration-300 font-medium ease-linear hover:text-[var(--primary)] py-3">Nosotros</a>
+                            </li>
+                            <li>
+                                 <a href="" class="duration-300 font-medium ease-linear hover:text-[var(--primary)]  py-3">Home</a>
+                            </li>
+                        </ul>
+
+                        <div class="lg:min-w-max flex items-center sm:w-max w-full pb-6 lg:pb-0 border-b border-[var(--box-bg)] lg:border-0 px-6 lg:px-0">
+                            <button class="bg-[var(--primary)] text-white px-6 py-3 rounded-full hover:bg-[var(--primary-hover)] transition-colors duration-300 cursor-pointer">
+                            Empezar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="min-w-max flex items-center gap-x-3">
+                        <button data-toggle-nav data-open-nav="false" class="lg:hidden lg:invisible outline-none w-7 h-auto flex flex-col relative">
+                            <span id="line1" class="w-6 h-0.5 rounded-full bg-[var(--heading-2)] transition-all duration-300 ease-linear"></span> 
+                            <span id="line2" class="w-6 origin-center  mt-1 h-0.5 rounded-ful bg-[var(--heading-2)] transition-all duration-300 ease-linear"></span> 
+                            <span id="line3" class="w-6 mt-1 h-0.5 rounded-ful bg-[var(--heading-2)] transition-all duration-300 ease-linear"></span>                         
+                            <span class="sr-only">togglenav</span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <section id="principal" class="relative pt-32 lg:pt-36">
+        <div class="mx-auto max-w-7xl w-full px-5 sm:px-8 md:px-14 lg:px-5  flex flex-col lg:flex-row gap-10 lg:gap-12">
+            <div class="absolute w-full lg:w-1/2 inset-y-0 lg:right-0 ">
+                <span class="absolute -left-6 md:left-4 top-24 lg:top-28 w-24 h-24 rotate-90 skew-x-12 rounded-3xl bg-green-400 blur-xl opacity-60 lg:opacity-95 lg:block hidden"></span>
+                <span class="absolute right-4 bottom-12 w-24 h-24 rounded-3xl bg-[var(--primary)] blur-xl opacity-80"></span>
+            </div>
+            <span class="w-4/12 lg:w-2/12 aspect-square bg-gradient-to-tr from-[var(--primary)] to-green-400 absolute -top-5 lg:left-0 rounded-full skew-y-12 blur-2xl opacity-40 skew-x-12 rotate-90"></span>
+            <div class="relative flex flex-col items-center text-center lg:text-left lg:py-7 xl:py-8 
+            lg:items-start lg:max-w-none max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:w-1/2">
+                
+                <h1 class="text-3xl/tight sm:text-4xl/tight md:text-5xl/tight xl:text-6xl/tight
+                font-bold text-[var(--heading-1)]">
+                  <span class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-20% via-[var(--primary)] via-30% to-green-600">Transformamos</span> tu experiencia en el taller
+                </h1>
+                <p class="md:text-lg text-[var(--heading-3)] mt-8">
+                    Conecta con talleres de confianza, agenda tu cita en segundos y sigue el avance de tu vehículo. Todo desde tu celular.
+                </p>
+                <div class="mt-10  w-full flex max-w-md mx-auto lg:mx-0">
+                    <div class="flex sm:flex-row flex-col gap-5 w-full">
+                        <button class="bg-[var(--primary)] text-white px-6 py-3 rounded-full hover:bg-[var(--primary-hover)] transition-colors duration-300 cursor-pointer">
+                            Empezar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-1 lg:w-1/2 lg:h-auto relative lg:max-w-none lg:mx-0 mx-auto max-w-3xl">
+                <img src="./img/image-talleres.png" alt="Hero image" width="2350" height="2359" class="lg:absolute lg:w-full lg:h-full rounded-3xl object-cover lg:max-h-none max-h-96">
+            </div>
+        </div>
+        </section>
+        <section id="services" class="relative">
+            <div class="mx-auto max-w-7xl w-full px-5 sm:px-8 md:px-14 lg:px-5 flex flex-col gap-10 lg:gap-12 ">
+                <div class="text-center max-w-3xl mx-auto space-y-4">
+                    <h1 class="text-[var(--heading-1)] font-semibold text-2xl sm:text-3xl md:text-4xl">
+                        Lo que ofrecemos
+                    </h1>
+                    <p class="md:text-lg text-[var(--heading-3)]">
+                        Tecnología al servicio de tu tranquilidad automotriz.
+                    </p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                   <div class="p-5 sm:p-6 lg:p-8 rounded-3xl border border-[var(--box-border)] bg-[var(--box-bg)] shadow-lg shadow-lg relative overflow-hidden">
+                    <div class="rounded-xl p-3 text-[var(--heading-1)] w-max relative bg-gray-300">
+                        <img width="50" height="50" src="https://img.icons8.com/?size=100&id=774&format=png&color=000000" alt="chat-message--v1"/>
+                    </div>
+                     <div class="mt-6 space-y-4 relative">
+                        <h2 class="text-lg md:text-xl font-semibold text-[var(--heading-2)]">
+                            Gestión de citas online
+                        </h2>
+                        <p class="md:text-lg text-[var(--heading-3)]">Reserva tu cita en el taller más cercano y disponible sin llamadas ni complicaciones.
+                        </p>
+                     </div>
+                      <span class="absolute w-32 aspect-square -bottom-16 -right-16 bg-[var(--primary)]/10 rounded-full"></span>
+                   </div>
+                   <div class="p-5 sm:p-6 lg:p-8 rounded-3xl border border-[var(--box-border)] bg-[var(--box-bg)] shadow-lg shadow-lg relative overflow-hidden">
+                    <div class="rounded-xl p-3 text-[var(--heading-1)] w-max relative bg-gray-300">
+                        <img width="50" height="50" src="https://img.icons8.com/ios/50/follow.png" alt="follow"/>
+                    </div>
+                     <div class="mt-6 space-y-4 relative">
+                        <h2 class="text-lg md:text-xl font-semibold text-[var(--heading-2)]">
+                            Seguimiento en tiempo real
+                        </h2>
+                        <p class="md:text-lg text-[var(--heading-3)]">
+                        Conoce el estado de la reparación de tu vehículo desde cualquier lugar.
+                        </p>
+                     </div>
+                      <span class="absolute w-32 aspect-square -bottom-16 -right-16 bg-[var(--primary)]/10 rounded-full"></span>
+                   </div>
+                   <div class="p-5 sm:p-6 lg:p-8 rounded-3xl border border-[var(--box-border)] bg-[var(--box-bg)] shadow-lg shadow-lg relative overflow-hidden">
+                    <div class="rounded-xl p-3 text-[var(--heading-1)] w-max relative bg-gray-300">
+                        <img width="50" height="50" src="https://img.icons8.com/ios/50/chat-message--v1.png" alt="chat-message--v1"/>
+                    </div>
+                     <div class="mt-6 space-y-4 relative">
+                        <h2 class="text-lg md:text-xl font-semibold text-[var(--heading-2)]">
+                            Comunicación directa
+                        </h2>
+                        <p class="md:text-lg text-[var(--heading-3)]">
+                        Habla directamente con el taller, recibe actualizaciones, cotizaciones y reportes claros.
+                        </p>
+                     </div>
+                      <span class="absolute w-32 aspect-square -bottom-16 -right-16 bg-[var(--primary)]/10 rounded-full"></span>
+                   </div>
+                </div>
+                </div>
+            </div>
+        </section>
+        <section id="about-us">
+            <div class="mx-auto max-w-7xl w-full px-5 sm:px-8 md:px-14 lg:px-5 flex flex-col md:flex-row gap-10 lg:gap-12">
+                <div class="max-w-md mx-auto md:max-w-none lg:mx-0  lg:pr-10 xl:pr-2 flex-1 flex w-11/12 md:w-5/12 lg:w-1/2 md:h-auto">
+                    <div class="w-full h-80 sm:h-96 md:h-full relative">
+                        <div class="absolute rotate-45 -left-5 md:-left-10 lg:-left-20 xl:-left-24 p-1 top-1/2 w-16 h-16 bg-gradient-to-br from-[var(--primary)] to-orange-400 blur-3xl opacity-50"></div>
+                        <div class="absolute  p-1 -top-4 md:-top-10 right-0 w-20 h-20 bg-gradient-to-br from-[var(--primary)] to-orange-400 rounded-full blur-3xl opacity-60"></div>
+                        <span class="absolute w-full aspect-[16/5] -skew-x-12 rounded-full bg-gradient-to-tr from-[var(--primary)] to-green-400 opacity-40 blur-2xl left-0 bottom-0"></span>
+                        <img src="./img/image-hero.png" alt="banner image"
+                        class=" w-auto left-1/2 -translate-x-1/2 absolute bottom-10 max-h-full rounded-full" />
+                    </div>
+                </div>
+                <div class="flex-1 flex md:w-7/12 lg:w-1/2 flex-col">
+                    <h1 class="text-[var(--heading-1)] font-semibold text-2xl sm:text-3xl md:text-4xl">
+                        Conectamos confianza con tecnología
+                    </h1>
+                    <p class="mt-8 md:text-lg text-[var(--heading-3)]">
+                       En Tallerazo.pe redefinimos la forma en que conductores y talleres se relacionan. Nuestra plataforma genera confianza, agilidad y una experiencia más humana y transparente para todos.
+                    </p>
+                    <div class="pt-8 grid grid-cols-2 gap-4 max-w-3xl md:max-w-[none]">
+                        <div class="p-5 sm:p-6 lg:p-8 rounded-3xl border border-[var(--box-border)] bg-[var(--box-bg)] shadow-lg shadow-[var(--box-sd)] relative overflow-hidden">
+                            <div class="rounded-xl bg-gray-300 p-3 text-[var(--heading-1)] w-max relative">
+                                <span slot="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                                </svg>                              
+                            </span>
+                            </div>
+                            <h2 class="md:text-xl font-semibold text-[var(--heading-2)] mt-6 mb-4">
+                                Misión    
+                            </h2>
+                            <p class="md:text-lg text-[var(--heading-3)]">
+                                Impulsar la transformación digital del sector automotriz, facilitando herramientas que mejoren la experiencia, confianza y comunicación entre talleres y conductores.
+                            </p>
+                        </div>
+                        <div class="p-5 sm:p-6 lg:p-8 rounded-3xl border border-[var(--box-border)] bg-[var(--box-bg)] shadow-lg shadow-[var(--box-sd)] relative overflow-hidden">
+                            <div class="rounded-xl bg-gray-300 p-3 text-[var(--heading-1)] w-max relative">
+                                <span slot="icon">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>                            
+                            </span>
+                            </div>
+                            <h2 class="md:text-xl font-semibold text-[var(--heading-2)] mt-6 mb-4">
+                                Visión    
+                            </h2>
+                            <p class="md:text-lg text-[var(--heading-3)]">
+                                Ser el principal puente entre talleres modernos y propietarios de vehículos que buscan un servicio confiable, transparente y digitalizado.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section  id="cta" class="pb-20">
+        <div class="mx-auto max-w-7xl w-full px-5 sm:px-8 md:px-14 lg:px-5 flex flex-col gap-10 lg:gap-12">
+            <div
+            class="w-full relative py-8 md:py-10 px-6 md:px-8 rounded-2xl bg-gradient-to-tr from-gray-100 to-gray-200"
+            >
+            <div class="absolute right-0 top-0 h-full w-full flex justify-end">
+                <div class="w-28 h-28 overflow-auto flex rounded-xl relative blur-2xl">
+                    <span
+                    class="absolute w-16 h-16 -top-1 -right-1 bg-green-500 rounded-md rotate-45"
+                    ></span>
+                    <span
+                    class="absolute w-16 h-16 -bottom-1 -right-1 bg-[#FCDC58] rounded-md rotate-45"
+                    ></span>
+                    <span
+                    class="absolute w-16 h-16 -bottom-1 -left-1 bg-[var(--primary)] rounded-md rotate-45"
+                    ></span>
+                </div>
+            </div>
+
+            <div class="absolute left-0 bottom-0 h-full w-full flex items-end">
+                <div class="w-28 h-28 overflow-auto flex rounded-xl relative blur-2xl">
+                    <span
+                    class="absolute w-16 h-16 -top-1 -right-1 bg-green-500 rounded-md rotate-45"
+                    ></span>
+                    <span
+                    class="absolute w-16 h-16 -bottom-1 -right-1 bg-[#FCDC58] rounded-md rotate-45"
+                    ></span>
+                    <span
+                    class="absolute w-16 h-16 -bottom-1 -left-1 bg-[var(--primary)] rounded-md rotate-45"
+                    ></span>
+                </div>
+            </div>
+            <div class="mx-auto text-center max-w-xl md:max-w-2xl relative">
+                <h1
+                class="text-3xl/tight sm:text-4xl/tight md:text-5xl/tight
+                font-bold text-[var(--heading-1)]"
+                >
+                Tu auto merece un <span class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-20% via-[var(--primary)] via-30% to-green-600">servicio de calidad</span>, tú mereces control total.
+                </h1>
+                <p class="pt-10 md:text-lg text-[var(--heading-3)]">
+                Regístrate gratis y empieza a agendar, comunicar y seguir tus servicios desde un solo lugar.
+                </p>
+                <div class="mx-auto max-w-md sm:max-w-xl pt-10">
+                <button class="bg-[var(--primary)] text-white px-6 py-3 rounded-full hover:bg-[var(--primary-hover)] transition-colors duration-300 cursor-pointer">
+                    <span class="text-white relative z-[5]">¡Probar ya!</span>
+                </button>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+        <footer class="relative bg-gradient-to-tr from-gray-100 to-gray-200 pt-28 rounded-t-3xl">
+            <div class="absolute right-0 top-0 h-full w-full flex justify-end">
+                    <div class="w-28 h-28 overflow-auto flex rounded-xl relative blur-2xl">
+                        <span
+                        class="absolute w-16 h-16 -top-1 -right-1 bg-green-500 rounded-md rotate-45"
+                        ></span>
+                        <span
+                        class="absolute w-16 h-16 -bottom-1 -right-1 bg-[#FCDC58] rounded-md rotate-45"
+                        ></span>
+                        <span
+                        class="absolute w-16 h-16 -bottom-1 -left-1 bg-[var(--primary)] rounded-md rotate-45"
+                        ></span>
+                    </div>
+                    <div class="absolute left-0 bottom-0 h-full w-full flex items-end">
+                        <div class="w-28 h-28 overflow-auto flex rounded-xl relative blur-2xl">
+                            <span
+                            class="absolute w-16 h-16 -top-1 -right-1 bg-green-500 rounded-md rotate-45"
+                            ></span>
+                            <span
+                            class="absolute w-16 h-16 -bottom-1 -right-1 bg-[#FCDC58] rounded-md rotate-45"
+                            ></span>
+                            <span
+                            class="absolute w-16 h-16 -bottom-1 -left-1 bg-[var(--primary)] rounded-md rotate-45"
+                            ></span>
+                        </div>
+                    </div>
+            </div>
+            <div class="mx-auto max-w-7xl w-full px-5 sm:px-8 md:px-14 lg:px-5 pb-8 relative overflow-auto">
+                <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 blur-2xl opacity-20 w-24 h-16 sm:w-48 sm:h-36 rounded-full rotate-12 skew-x-6 bg-[var(--primary)]"></span>
+                <div class="grid grid-cols-2 lg:grid-cols-3 lg:items-stretch gap-8 relative">
+                    <div class="col-span-2 lg:col-span-1 h-auto flex flex-col">
+                        <div class="h-full">
+                            <a href="#" class="relative flex items-center gap-3">
+                                <img src="./img/logo.png" alt="logo" class="w-20 h-20">
+                                <div class="inline-flex text-lg font-semibold text-[var(--heading-1)]">
+                                    Tallerazo.pe
+                                </div>
+                            </a>
+                            <p class="mt-8 text-[var(--heading-3)]">
+                                Conecta. Agenda. Confía.
+                            </p>
+                        </div>
+
+                        <!-- social links -->
+                        <div class="min-h-max flex items-center gap-4 text-[var(--heading-3)] mt-8">
+                            <a href="#" class="transition hover:text-[var(--heading-1)] hover:scale-105">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-5 h-5" viewBox="0 0 16 16">
+                                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                                </svg>
+                                <span class="sr-only">Facebook</span>
+                            </a>
+
+                            <a href="#" class="transition hover:text-[var(--heading-1)] hover:scale-105">
+                                <svg width="48px" height="48px" class="w-7 h-7"  viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <title>Tiktok</title>
+                                    <g id="Icon/Social/tiktok-black" stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
+                                        <path d="M38.0766847,15.8542954 C36.0693906,15.7935177 34.2504839,14.8341149 32.8791434,13.5466056 C32.1316475,12.8317108 31.540171,11.9694126 31.1415066,11.0151329 C30.7426093,10.0603874 30.5453728,9.03391952 30.5619062,8 L24.9731521,8 L24.9731521,28.8295196 C24.9731521,32.3434487 22.8773693,34.4182737 20.2765028,34.4182737 C19.6505623,34.4320127 19.0283477,34.3209362 18.4461858,34.0908659 C17.8640239,33.8612612 17.3337909,33.5175528 16.8862248,33.0797671 C16.4386588,32.6422142 16.0833071,32.1196657 15.8404292,31.5426268 C15.5977841,30.9658208 15.4727358,30.3459348 15.4727358,29.7202272 C15.4727358,29.0940539 15.5977841,28.4746337 15.8404292,27.8978277 C16.0833071,27.3207888 16.4386588,26.7980074 16.8862248,26.3604545 C17.3337909,25.9229017 17.8640239,25.5791933 18.4461858,25.3491229 C19.0283477,25.1192854 19.6505623,25.0084418 20.2765028,25.0219479 C20.7939283,25.0263724 21.3069293,25.1167239 21.794781,25.2902081 L21.794781,19.5985278 C21.2957518,19.4900128 20.7869423,19.436221 20.2765028,19.4380839 C18.2431278,19.4392483 16.2560928,20.0426009 14.5659604,21.1729264 C12.875828,22.303019 11.5587449,23.9090873 10.7814424,25.7878401 C10.003907,27.666593 9.80084889,29.7339663 10.1981162,31.7275214 C10.5953834,33.7217752 11.5748126,35.5530237 13.0129853,36.9904978 C14.4509252,38.4277391 16.2828722,39.4064696 18.277126,39.8028054 C20.2711469,40.1991413 22.3382874,39.9951517 24.2163416,39.2169177 C26.0948616,38.4384508 27.7002312,37.1209021 28.8296253,35.4300711 C29.9592522,33.7397058 30.5619062,31.7522051 30.5619062,29.7188301 L30.5619062,18.8324027 C32.7275484,20.3418321 35.3149087,21.0404263 38.0766847,21.0867664 L38.0766847,15.8542954 Z"></path>
+                                    </g>
+                                </svg>
+                                <span class="sr-only">Tiktok</span>
+                            </a>      
+                            <a href="#" class="transition hover:text-[var(--heading-1)] hover:scale-105">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-5 h-5" viewBox="0 0 16 16">
+                                    <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                                </svg>
+                                <span class="sr-only">Twitter</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="bg-gradient-to-tl from-[var(--box-bg)] py-2 relative">
+                <div class="mx-auto max-w-7xl w-full px-5 sm:px-8 md:px-14 lg:px-5">
+                    <div class="flex justify-between items-center gap-6 md:text-lg text-[var(--heading-3)]">
+                        <div>
+                            &copy; <span id="year"></span> Tulio. Todos los derechos reservados
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
+<!--
+based on 
+https://github.com/unoforge/agency-landing-page-Astrojs/blob/main/src/components/elements/Footer.astro
+-->
